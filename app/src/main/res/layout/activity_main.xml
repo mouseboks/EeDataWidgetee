@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.definedoutcomes.eedatawidget.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_mifiData"
+        android:layout_width="167dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:text="xx.x of xx"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_phoneData"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="167dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:text="Mifi Data"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get_ee_data" />
+
+    <Button
+        android:id="@+id/btn_get_ee_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getEeUsageData"
+        android:text="Refresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <TextView
+        android:id="@+id/tv_phoneData"
+        android:layout_width="166dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="xx.x of xx"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_mifiData"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="156dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Phone Data"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get_ee_data" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Last update"
+        app:layout_constraintStart_toStartOf="@+id/tv_phoneData"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phoneData" />
+
+    <TextView
+        android:id="@+id/tv_refreshDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Unknown"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phoneData" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Mifi" />
+
+        <TextView
+            android:id="@+id/mifi_data"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="000"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Phone" />
+
+
+        <TextView
+            android:id="@+id/phone_data"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="000"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:textStyle="bold" />
+    </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/status_time"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="time" />
+
+</LinearLayout>
