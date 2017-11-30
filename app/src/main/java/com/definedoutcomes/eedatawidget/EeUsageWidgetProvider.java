@@ -29,14 +29,8 @@ import java.time.format.DateTimeFormatter;
 public class EeUsageWidgetProvider extends AppWidgetProvider {
 
     private String url = "http://ee-monitor.definedoutcomes.com:5002/eedata";  // This is the API base URL (GitHub API)
-    RequestQueue requestQueue;
 
-    public EeUsageWidgetProvider() {
-          // This setups up a new request queue which we will need to make HTTP requests.
-
-    }
-
-        @Override
+    @Override
     public void onUpdate(final Context context, final AppWidgetManager appWidgetManager, final int[] appWidgetIds) {
 
             ComponentName thisWidget = new ComponentName(context,
@@ -63,8 +57,7 @@ public class EeUsageWidgetProvider extends AppWidgetProvider {
                                     String phoneData = jsonObj.get("phone_data_remaining").toString();
                                     String mifiData = jsonObj.get("mifi_data_remaining").toString();
                                     String refreshTime = jsonObj.get("time").toString();
-                                    //String lastUpdated = jsonObj.get("updated_at").toString();
-                                    //updateEeDataView(phoneData + " of 38", mifiData + " of 64", refreshTime);
+
                                     remoteViews.setTextViewText(R.id.mifi_data,
                                             mifiData);
                                     remoteViews.setTextViewText(R.id.phone_data,
@@ -79,7 +72,6 @@ public class EeUsageWidgetProvider extends AppWidgetProvider {
                                 } catch (JSONException e) {
                                     //// If there is an error then output this to the logs.
                                     Log.e("Volley", "Invalid JSON Object.");
-                                    //this.tvRefreshDate.setText(refreshTime);
                                 }
 
 
@@ -90,8 +82,6 @@ public class EeUsageWidgetProvider extends AppWidgetProvider {
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                // If there a HTTP error then add a note to our repo list.
-                                //updateEeDataView("Error while calling REST API");
                                 Log.e("Volley", error.toString());
                             }
                         }
@@ -99,7 +89,7 @@ public class EeUsageWidgetProvider extends AppWidgetProvider {
 
                 queue.add(arrReq);
 
-                // Register an onClickListener
+                // Register an onClickListener to allow refreshing the widget by clicking.
                 Intent clickIntent = new Intent(context,
                         EeUsageWidgetProvider.class);
 
@@ -111,6 +101,7 @@ public class EeUsageWidgetProvider extends AppWidgetProvider {
                         context, 0, clickIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
                 remoteViews.setOnClickPendingIntent(R.id.mifi_data, pendingIntent);
+                remoteViews.setOnClickPendingIntent(R.id.phone_data, pendingIntent);
                 appWidgetManager.updateAppWidget(widgetId, remoteViews);
             }
         }
