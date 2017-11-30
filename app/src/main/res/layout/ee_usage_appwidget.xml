@@ -21,10 +21,11 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="Mifi" />
 
         <TextView
-            android:id="@+id/mifi_data"
+            android:id="@+id/tv_mifi_data"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -50,7 +51,7 @@
 
 
         <TextView
-            android:id="@+id/phone_data"
+            android:id="@+id/tv_phone_data"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -62,12 +63,12 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/status_time"
+        android:id="@+id/tv_status_time"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:textStyle="bold"
-        android:text="time" />
+        android:text="time"
+        android:textStyle="bold" />
 
 </LinearLayout>

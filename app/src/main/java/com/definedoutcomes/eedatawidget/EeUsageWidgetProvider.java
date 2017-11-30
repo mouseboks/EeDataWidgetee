@@ -58,14 +58,14 @@ public class EeUsageWidgetProvider extends AppWidgetProvider {
                                     String mifiData = jsonObj.get("mifi_data_remaining").toString();
                                     String refreshTime = jsonObj.get("time").toString();
 
-                                    remoteViews.setTextViewText(R.id.mifi_data,
+                                    remoteViews.setTextViewText(R.id.tv_mifi_data,
                                             mifiData);
-                                    remoteViews.setTextViewText(R.id.phone_data,
+                                    remoteViews.setTextViewText(R.id.tv_phone_data,
                                             phoneData);
 
                                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
                                     LocalDateTime dateTime = LocalDateTime.parse(refreshTime.substring(0, refreshTime.indexOf('.')), formatter);
-                                    remoteViews.setTextViewText(R.id.status_time,
+                                    remoteViews.setTextViewText(R.id.tv_status_time,
                                             dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 
                                     appWidgetManager.updateAppWidget(widgetIdToUse, remoteViews);
@@ -100,8 +100,8 @@ public class EeUsageWidgetProvider extends AppWidgetProvider {
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(
                         context, 0, clickIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
-                remoteViews.setOnClickPendingIntent(R.id.mifi_data, pendingIntent);
-                remoteViews.setOnClickPendingIntent(R.id.phone_data, pendingIntent);
+                remoteViews.setOnClickPendingIntent(R.id.tv_mifi_data, pendingIntent);
+                remoteViews.setOnClickPendingIntent(R.id.tv_phone_data, pendingIntent);
                 appWidgetManager.updateAppWidget(widgetId, remoteViews);
             }
         }
