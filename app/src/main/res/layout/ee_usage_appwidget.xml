@@ -17,6 +17,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_mifi_days"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -42,6 +43,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_phone_days"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
