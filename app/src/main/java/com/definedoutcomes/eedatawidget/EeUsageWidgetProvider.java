@@ -14,17 +14,15 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+//import java.time.LocalDate;
+//import java.time.LocalDateTime;
+//import java.time.format.DateTimeFormatter;
 
 public class EeUsageWidgetProvider extends AppWidgetProvider {
 
@@ -71,12 +69,13 @@ public class EeUsageWidgetProvider extends AppWidgetProvider {
                                     remoteViews.setTextViewText(R.id.tv_mifi_days,
                                             mifiDays);
 
-                                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
-                                    LocalDateTime dateTime = LocalDateTime.parse(refreshTime.substring(0, refreshTime.indexOf('.')), formatter);
-                                    remoteViews.setTextViewText(R.id.tv_status_time,
-                                                                dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-                                                                        .replaceAll("T", " ")
-                                    );
+                                    //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+                                    //LocalDateTime dateTime = LocalDateTime.parse(refreshTime.substring(0, refreshTime.indexOf('.')), formatter);
+                                    //remoteViews.setTextViewText(R.id.tv_status_time,
+                                    //                            dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                    //                                    .replaceAll("T", " ")
+                                    //);
+                                    remoteViews.setTextViewText(R.id.tv_status_time, refreshTime);
 
                                     appWidgetManager.updateAppWidget(widgetIdToUse, remoteViews);
                                 } catch (JSONException e) {
